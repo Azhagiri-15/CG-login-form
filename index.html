@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Student Login & Signup</title>
+  <title>College Registration</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="container" id="studentForm">
+ <div class="container">
     <div class="form-box">
       <div class="toggle">
-        <button onclick="toggleForm('login')">Login</button>
-        <button onclick="toggleForm('signup')">Sign Up</button>
+        <button onclick="toggleForm('collegeSignup')">Sign Up</button>
+        <button onclick="toggleForm('collegeRegister')">Register</button>
       </div>
-      <form id="loginForm" class="form animated">
-        <h2>Student Login</h2>
+      <form id="collegeSignup" class="form animated">
+        <h2>College Sign Up Form</h2>
+        <input type="text" placeholder="College Name" required />
         <input type="email" placeholder="Email" required />
-        <input type="password" placeholder="Password" required />
-        <button type="submit">Login</button>
-      </form>
-      <form id="signupForm" class="form animated hidden">
-        <h2>Student Sign Up</h2>
-        <input type="text" placeholder="Full Name" required />
-        <input type="email" placeholder="Email" required />
-        <input type="tel" placeholder="Phone Number" required />
         <input type="password" placeholder="Password" required />
         <button type="submit">Sign Up</button>
+      </form>
+      <form id="collegeRegister" class="form animated hidden">
+        <h2>College Register Form</h2>
+        <input type="text" placeholder="College Code" required />
+        <input type="text" placeholder="Location" required />
+        <input type="tel" placeholder="Contact Number" required />
+        <button type="submit">Register</button>
       </form>
     </div>
   </div>
 
-  <style>
+   <style>
     button {
   background-color: #1976d2;
   color: white;
@@ -45,6 +46,9 @@ button:hover {
   flex-direction: column;
   gap: 10px;
   animation: slideIn 0.5s ease;
+}
+h2{
+  text-align: center;
 }
 input, button {
   padding: 10px;
@@ -92,13 +96,9 @@ body {
 
   <script>
     function toggleForm(type) {
-      document.getElementById("loginForm").classList.add("hidden");
-      document.getElementById("signupForm").classList.add("hidden");
-      if (type === "login") {
-        document.getElementById("loginForm").classList.remove("hidden");
-      } else {
-        document.getElementById("signupForm").classList.remove("hidden");
-      }
+      document.getElementById("collegeSignup").classList.add("hidden");
+      document.getElementById("collegeRegister").classList.add("hidden");
+      document.getElementById(type).classList.remove("hidden");
     }
   </script>
 </body>
